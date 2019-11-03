@@ -3,37 +3,19 @@
 
 int main()
 {
-	Stack<int> stk;
-
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
-	stk.push(5);
+	Stack<int> stk1;
+	for (int i = 0; i < 10; i++)
+		stk1.push(i);
+	std::cout << "Stack 1 BEFORE\n" << stk1;
 
 	Stack<int> stk2;
-	stk2.push(111);	
-	stk2.push(222);
-	stk2.push(333);
-	stk2.push(444);
-	stk2.push(555);
-	stk2.push(666);
-	stk2.push(777);
-	stk2.push(888);
-	stk2.push(999);
+	for (int i = 111; i < 1000; i = i + 111)
+		stk2.push(i);
+	std::cout << "Stack 2\n" << stk2;
 
-	Wrap<Stack<int>> wrp1(stk);
+	Wrap<Stack<int>> wrp1(stk1);
 	Wrap<Stack<int>> wrp2(stk2);
 
 	wrp1(2, 5) = wrp2;
-
-	std::cout << stk;
-	std::cout << "---\n";
-	std::cout << stk2;
-
+	std::cout << "Stack 1 AFTER\n" << stk1;
 }
